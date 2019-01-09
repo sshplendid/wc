@@ -29,7 +29,7 @@ public class LineCounterTests {
     }
     @Test
     public void whenEmptyLineIsGiven_thenReturn1() {
-        String given = "";
+        String given = "\n";
 
         assertEquals(1, lc.count(given));
     }
@@ -37,8 +37,14 @@ public class LineCounterTests {
     @Test
     public void whenMultipleEmptyLinesAreGiven_thenReturn1() {
         String given = "\n\n\n";
+        assertEquals(4, lc.count(given));
+    }
 
-        assertEquals(1, lc.count(given));
+    @Test
+    public void whenEmptyLInesAreGiven_thenReturn0() {
+        String given = "\n\n\n";
+
+        assertEquals(0, given.split("\n").length);
     }
 
 }
